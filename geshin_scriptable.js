@@ -3,53 +3,53 @@
 const mihoyoCookie = ""
 
 //背景色
-const lightModeWidgetColor = "F4F4F4"
-const darkModeWidgetColor = "252527"
+const lightModeWidgetColor  = "F4F4F4"
+const darkModeWidgetColor   = "252527"
 
 //控件背景色
-const darkModeLightColor = "dfd7c2"//"d44848"
-const darkModeDeepColor = "5f766a"//"1e2732"
-const lightModeLightColor = "F4F1E8"
-const lightModeDeepColor = "E9E2D7"
+const darkModeLightColor    = "dfd7c2"//"d44848"
+const darkModeDeepColor     = "5f766a"//"1e2732"
+const lightModeLightColor   = "F4F1E8"
+const lightModeDeepColor    = "E9E2D7"
 
 //警告色
-const darkModeLightAlertColor = "E36B64"
-const darkModeDeepAlertColor = "B53C35"
-const lightModeLightAlertColor = darkModeLightAlertColor
-const lightModeDeepAlertColor = darkModeDeepAlertColor
+const darkModeLightAlertColor   = "E36B64"
+const darkModeDeepAlertColor    = "B53C35"
+const lightModeLightAlertColor  = darkModeLightAlertColor
+const lightModeDeepAlertColor   = darkModeDeepAlertColor
 
-const widgetBackgroundColor = Color.dynamic(new Color(lightModeWidgetColor, 1.0), new Color(darkModeWidgetColor, 1.0))
+const widgetBackgroundColor     = Color.dynamic(new Color(lightModeWidgetColor, 1.0), new Color(darkModeWidgetColor, 1.0))
 
-const backgroundColor = Color.dynamic(new Color(lightModeLightColor, 1.0), new Color(darkModeDeepColor, 1.0))
-const subBackgroundColor = Color.dynamic(new Color(lightModeDeepColor, 1.0), new Color(darkModeLightColor, 1.0))
-const lineColor = Color.dynamic(new Color(lightModeDeepColor, 1.0), new Color(darkModeLightColor, 1.0))
+const backgroundColor           = Color.dynamic(new Color(lightModeLightColor, 1.0), new Color(darkModeDeepColor, 1.0))
+const subBackgroundColor        = Color.dynamic(new Color(lightModeDeepColor, 1.0), new Color(darkModeLightColor, 1.0))
+const lineColor                 = Color.dynamic(new Color(lightModeDeepColor, 1.0), new Color(darkModeLightColor, 1.0))
 
-const titleTextColor = Color.dynamic(new Color("625E5D", 1.0), new Color("eeeeee", 1.0))
-const subTitleTextColor = Color.dynamic(new Color("C4B8A7", 1.0), new Color("cccccc", 1.0))
-const descriptionTextColor = Color.dynamic(new Color("795D50", 1.0), new Color("333333", 1.0))
+const titleTextColor            = Color.dynamic(new Color("625E5D", 1.0), new Color("eeeeee", 1.0))
+const subTitleTextColor         = Color.dynamic(new Color("C4B8A7", 1.0), new Color("cccccc", 1.0))
+const descriptionTextColor      = Color.dynamic(new Color("795D50", 1.0), new Color("333333", 1.0))
 
-const subAlertColor = Color.dynamic(new Color(lightModeDeepAlertColor, 1.0), new Color(darkModeLightAlertColor, 1.0))
-const alertColor = Color.dynamic(new Color(lightModeLightAlertColor, 1.0), new Color(darkModeDeepAlertColor, 1.0))
+const subAlertColor             = Color.dynamic(new Color(lightModeDeepAlertColor, 1.0), new Color(darkModeLightAlertColor, 1.0))
+const alertColor                = Color.dynamic(new Color(lightModeLightAlertColor, 1.0), new Color(darkModeDeepAlertColor, 1.0))
 
-const imageBorderColor = Color.dynamic(new Color("DA9E58", 1.0), new Color("DA9E58", 1.0))
+const imageBorderColor          = Color.dynamic(new Color("DA9E58", 1.0), new Color("DA9E58", 1.0))
 
-const coinImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/3c9e107754da8858b9a97f6b187b55a7_8549944162621642512.png?x-oss-process=image/quality,q_75/resize,s_96"
-const resinImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/b3572dc1c61981a662d7523103dcc4fa_8505906760983331750.png?x-oss-process=image/quality,q_75/resize,s_96"
-const taskImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/02598df1fb9d3c8e420273c460ac946a_8267293389953062911.png?x-oss-process=image/quality,q_75/resize,s_96"
-const bossImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/c2b219874b51bd52aec7e793c9cfbd0e_6371863560482907257.png?x-oss-process=image/quality,q_75/resize,s_96"
-const expenditionImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/14ac5093fc9f48a54b0f6a362be8a61f_8273290538659802269.png?x-oss-process=image/quality,q_75/resize,s_96"
-const transformerImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
-const genshinImageUrl = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
+const coinImageUrl          = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/3c9e107754da8858b9a97f6b187b55a7_8549944162621642512.png?x-oss-process=image/quality,q_75/resize,s_96"
+const resinImageUrl         = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/b3572dc1c61981a662d7523103dcc4fa_8505906760983331750.png?x-oss-process=image/quality,q_75/resize,s_96"
+const taskImageUrl          = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/02598df1fb9d3c8e420273c460ac946a_8267293389953062911.png?x-oss-process=image/quality,q_75/resize,s_96"
+const bossImageUrl          = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/c2b219874b51bd52aec7e793c9cfbd0e_6371863560482907257.png?x-oss-process=image/quality,q_75/resize,s_96"
+const expenditionImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/14ac5093fc9f48a54b0f6a362be8a61f_8273290538659802269.png?x-oss-process=image/quality,q_75/resize,s_96"
+const transformerImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
+const genshinLogoImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
 
 async function main() {
     try { //添加运行错误提示
         if (!config.runsInWidget) { //测试时展示
-            // let widget = await widgetWithFamily('small',false)
+            // let widget = await widgetWithFamily('small',true)
             // widget.presentSmall()
-            let widget = await widgetWithFamily('medium',false)
-            widget.presentMedium()
-            // let widget = await widgetWithFamily('large',false)
-            // widget.presentLarge()
+            // let widget = await widgetWithFamily('medium',true)
+            // widget.presentMedium()
+            let widget = await widgetWithFamily('large',false)
+            widget.presentLarge()
             // let widget = await widgetWithFamily('extraLarge',false)
             // widget.presentExtraLarge()
         }else{
@@ -66,24 +66,14 @@ async function main() {
 }
 
 async function widgetWithFamily(widgetFamily,isPhone) {
-    if (isPhone) {
-        if (widgetFamily == 'small') {
-            return createSmallWidget()
-        } else if (widgetFamily == 'medium') {
-            return createPhoneMediumWidget()
-        } else if (widgetFamily == 'large') {
-            return createPhoneLargeWidget()
-        }
-    } else {
-        if (widgetFamily == 'small') {
-            return createSmallWidget()
-        } else if (widgetFamily == 'medium') {
-            return createPadMediumWidget()
-        } else if (widgetFamily == 'large') {
-            return createPhoneLargeWidget()
-        } else if (widgetFamily == 'extraLarge') {
-            return createExtraLargeWidget()
-        }
+    if (widgetFamily == 'small') {
+        return createSmallWidget()
+    } else if (widgetFamily == 'medium') {
+        return createMediumWidget()
+    } else if (widgetFamily == 'large') {
+        return createLargeWidget()
+    } else if (widgetFamily == 'extraLarge') {
+        return createExtraLargeWidget()
     }
 
     let widget = new ListWidget()
@@ -101,7 +91,7 @@ async function createHeader(widget, size) {
     stack.size = size
 
     // 添加原神图标
-    var req = new Request(genshinImageUrl)
+    var req = new Request(genshinLogoImageUrl)
     req.method = 'GET'
     var stackImgItem = stack.addImage(await req.loadImage())
     stackImgItem.imageSize = new Size(imageSize, imageSize)
@@ -112,6 +102,8 @@ async function createHeader(widget, size) {
     var textItem = stack.addText("实时便笺")
     textItem.font = getFont('bold', Math.min(16, imageSize - 8))
     textItem.textColor = titleTextColor
+    textItem.minimumScaleFactor = 0.1
+    textItem.lineLimit = 1
 
     // 添加更新时间
     stack.addSpacer()
@@ -120,6 +112,8 @@ async function createHeader(widget, size) {
     textItem.font = getFont('light', Math.min(16, imageSize - 10))
     textItem.textColor = subTitleTextColor
     textItem.rightAlignText()
+    textItem.minimumScaleFactor = 0.1
+    textItem.lineLimit = 1
     return
 }
 async function createSmallHeader(widget, size) {
@@ -133,6 +127,8 @@ async function createSmallHeader(widget, size) {
     textItem.font = getFont('light', Math.min(size.height - 2, 12))
     textItem.textColor = subTitleTextColor
     textItem.rightAlignText()
+    textItem.minimumScaleFactor = 0.1
+    textItem.lineLimit = 1
     return
 }
 
@@ -183,17 +179,57 @@ async function createExpeditionView(widegt, size, expedition) {
         titleColor = titleTextColor
     }
 
-    var subView = view.addStack()
-    subView.layoutHorizontally()
+    var titleView = view.addStack()
+    titleView.layoutHorizontally()
+    titleView.centerAlignContent()
+    titleView.size = new Size(size.width,size.height - size.width)
 
-    subView.addSpacer()
-
-    var titleLabel = subView.addText(title)
+    var titleLabel = titleView.addText(`${title}`)
     titleLabel.font = getFont('regular', size.height - size.width - 6)
     titleLabel.textColor = titleColor
+    titleLabel.centerAlignText()
+    titleLabel.lineLimit = 1
     titleLabel.minimumScaleFactor = 0.1
 
-    subView.addSpacer()
+    return view
+}
+async function createKeyValueMediumView(widget, size, title, titleColor, description, descriptionColor, value, valueColor) {
+    var view = widget.addStack()
+    view.layoutHorizontally()
+    view.size = size
+    view.backgroundColor = backgroundColor
+
+    var left = view.addStack()
+    left.layoutHorizontally()
+    left.centerAlignContent()
+    left.size = new Size(40, view.size.height)
+
+    var titleText = left.addText(title)
+    titleText.textColor = titleColor
+    titleText.font = getFont("bold", 12)
+    titleText.centerAlignText()
+    titleText.minimumScaleFactor = 0.1
+    titleText.lineLimit = 1
+
+    var right = view.addStack()
+    right.centerAlignContent()
+    right.backgroundColor = subBackgroundColor
+    right.size = new Size(view.size.width - left.size.width, view.size.height)
+    right.setPadding(0, 4, 0, 8)
+
+    let descriptionText = right.addText(description)
+    descriptionText.textColor = descriptionColor
+    descriptionText.font = getFont("light", 10)
+    descriptionText.minimumScaleFactor = 0.1
+    descriptionText.lineLimit = 1
+
+    right.addSpacer()
+
+    let valueText = right.addText(value)
+    valueText.font = getFont("bold", 12)
+    valueText.textColor = valueColor
+    valueText.minimumScaleFactor = 0.1
+    valueText.lineLimit = 1
 
     return view
 }
@@ -223,6 +259,8 @@ async function createKeyValueLargeView(widget, size, title, titleColor, descript
     let titleText = left.addText(title)
     titleText.textColor = titleColor
     titleText.font = getFont("bold", 14)
+    titleText.minimumScaleFactor = 0.1
+    titleText.lineLimit = 1
 
     left.addSpacer()
 
@@ -236,93 +274,16 @@ async function createKeyValueLargeView(widget, size, title, titleColor, descript
     let descriptionText = right.addText(description)
     descriptionText.textColor = descriptionColor
     descriptionText.font = getFont("light", 14)
+    descriptionText.minimumScaleFactor = 0.1
+    descriptionText.lineLimit = 1
 
     right.addSpacer()
 
     let valueText = right.addText(value)
     valueText.font = getFont("bold", 14)
     valueText.textColor = valueColor
-
-    return view
-}
-
-async function createPhoneKeyValueView(widget, size, title, titleColor, description, descriptionColor, value, valueColor) {
-    var view = widget.addStack()
-    view.layoutHorizontally()
-    view.size = size
-    view.backgroundColor = backgroundColor
-
-    var left = view.addStack()
-    left.layoutVertically()
-    left.size = new Size(64, view.size.height)
-    left.setPadding(2, 8, 2, 0)
-
-    left.addSpacer()
-
-    let titleText = left.addText(title)
-    titleText.textColor = titleColor
-    titleText.font = getFont("bold", 12)
-
-    let descriptionText = left.addText(description)
-    descriptionText.textColor = descriptionColor
-    descriptionText.font = getFont("light", 10)
-
-    left.addSpacer()
-
-    var right = view.addStack()
-    right.centerAlignContent()
-    right.backgroundColor = subBackgroundColor
-    right.size = new Size(view.size.width - left.size.width, view.size.height)
-    right.setPadding(0, 0, 0, 8)
-
-    right.addSpacer()
-
-    let valueText = right.addText(value)
-    valueText.font = getFont("bold", 12)
-    valueText.textColor = valueColor
     valueText.minimumScaleFactor = 0.1
-
-    return view
-}
-async function createPadKeyValueView(widget, size, title, titleColor, description, descriptionColor, value, valueColor) {
-    var view = widget.addStack()
-    view.layoutHorizontally()
-    view.size = size
-    view.backgroundColor = backgroundColor
-
-    var left = view.addStack()
-    left.layoutVertically()
-    left.size = new Size(72, view.size.height)
-    left.setPadding(2, 12, 2, 0)
-
-    left.addSpacer()
-
-    let titleText = left.addText(title)
-    titleText.textColor = titleColor
-    titleText.font = getFont("bold", 12)
-
-    let descriptionText = left.addText(description)
-    descriptionText.textColor = descriptionColor
-    descriptionText.font = getFont("light", 10)
-
-    left.addSpacer()
-
-    var right = view.addStack()
-    right.centerAlignContent()
-    right.backgroundColor = subBackgroundColor
-    right.size = new Size(view.size.width - left.size.width, view.size.height)
-    right.setPadding(0, 0, 0, 8)
-
-    right.addSpacer()
-
-    let valueText = right.addText(value)
-    valueText.font = getFont("bold", 12)
-    valueText.textColor = valueColor
-    valueText.minimumScaleFactor = 0.1
-
-    view.borderWidth = 2
-    view.borderColor = lineColor
-    view.cornerRadius = size.height / 2
+    valueText.lineLimit = 1
 
     return view
 }
@@ -377,7 +338,130 @@ async function createSmallWidget() {
 
     return listWidget
 }
-async function createPhoneLargeWidget() {
+async function createMediumWidget() {
+    let genshinData = await getGeshinData()
+
+    const listWidget = new ListWidget()
+    listWidget.backgroundColor = widgetBackgroundColor
+
+    let widget = listWidget.addStack()
+    widget.layoutVertically()
+    widget.size = new Size(contentWidthWith("medium"), contentHeightWith("medium"))
+
+    let headerSize = new Size(contentWidthWith("large"), 24)
+    let header = await createHeader(widget, headerSize)
+    widget.addSpacer(10)
+
+    var content = widget.addStack()
+    content.layoutHorizontally()
+    content.size = new Size(widget.size.width, (widget.size.height - headerSize.height - 10))
+
+    var size = new Size(content.size.width / 2 - 2, content.size.height / 3)
+    size = new Size(size.width, Math.min(size.height, 30))
+    var margin = (content.size.height - size.height * 3) / 2
+
+    var line = content.addStack()
+    line.size = new Size(size.width, content.size.height)
+    line.layoutVertically()
+    line.borderColor = lineColor
+    line.cornerRadius = 12
+    line.borderWidth = 2
+
+
+    await createKeyValueMediumView(line, new Size(size.width , margin),
+        ``,
+        titleTextColor,
+        ``,
+        resinAlert(genshinData) ? alertColor : descriptionTextColor,
+        ``,
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `树脂`,
+        titleTextColor,
+        resinTime(genshinData),
+        resinAlert(genshinData) ? alertColor : descriptionTextColor,
+        resinNumber(genshinData),
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `宝钱`,
+        titleTextColor,
+        coinTime(genshinData),
+        coinAlert(genshinData) ? alertColor : descriptionTextColor,
+        coinNumber(genshinData),
+        coinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `质变`,
+        titleTextColor,
+        transformerTime(genshinData),
+        transformerAlert(genshinData) ? alertColor : descriptionTextColor,
+        transformerStatus(genshinData),
+        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, new Size(size.width , margin),
+        ``,
+        titleTextColor,
+        ``,
+        resinAlert(genshinData) ? alertColor : descriptionTextColor,
+        ``,
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+
+    content.addSpacer(4)
+
+    line = content.addStack()
+    line.size = new Size(size.width, content.size.height)
+    line.layoutVertically()
+    line.borderColor = lineColor
+    line.cornerRadius = 12
+    line.borderWidth = 2
+
+    await createKeyValueMediumView(line, new Size(size.width , margin),
+        ``,
+        titleTextColor,
+        ``,
+        resinAlert(genshinData) ? alertColor : descriptionTextColor,
+        ``,
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `周本`,
+        titleTextColor,
+        bossStatus(genshinData),
+        bossAlert(genshinData) ? alertColor : descriptionTextColor,
+        bossNumber(genshinData),
+        bossAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `派遣`,
+        titleTextColor,
+        expeditionTime(genshinData),
+        expeditionTimeAlert(genshinData) ? alertColor : descriptionTextColor,
+        expeditionStatus(genshinData),
+        expeditionStatusAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, size,
+        `每日`,
+        titleTextColor,
+        taskStatus(genshinData),
+        taskAlert(genshinData) ? alertColor : descriptionTextColor,
+        taskNumber(genshinData),
+        taskAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+    await createKeyValueMediumView(line, new Size(size.width , margin),
+        ``,
+        titleTextColor,
+        ``,
+        resinAlert(genshinData) ? alertColor : descriptionTextColor,
+        ``,
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+    )
+
+    return listWidget
+}
+async function createLargeWidget() {
     let genshinData = await getGeshinData()
 
     const listWidget = new ListWidget()
@@ -586,189 +670,6 @@ async function createExtraLargeWidget() {
         await createExpeditionView(expeditionsView, expeditionSize, expedition)
         expeditionsView.addSpacer(4)
     }
-
-    return listWidget
-}
-
-async function createPhoneMediumWidget() {
-    let genshinData = await getGeshinData()
-
-    const listWidget = new ListWidget()
-    listWidget.backgroundColor = widgetBackgroundColor
-
-    let widget = listWidget.addStack()
-    widget.layoutVertically()
-    widget.size = new Size(contentWidthWith("medium"), contentHeightWith("medium"))
-
-    let headerSize = new Size(contentWidthWith("medium"), Math.min(24, widget.size.height / 6))
-    let header = await createHeader(widget, headerSize)
-    widget.addSpacer(8)
-
-    var size = new Size((contentWidthWith("medium") - 4) / 2, (widget.size.height - headerSize.height - 8) / 3 - 4)
-
-    var line = widget.addStack()
-    line.size = new Size(contentWidthWith("medium"), size.height)
-    line.layoutHorizontally()
-
-    await createPadKeyValueView(line, size,
-        `原粹树脂`,
-        titleTextColor,
-        resinTime(genshinData),
-        resinAlert(genshinData) ? alertColor : subTitleTextColor,
-        resinNumber(genshinData),
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    line.addSpacer(4)
-
-    await createPadKeyValueView(line, size,
-        `洞天宝钱`,
-        titleTextColor,
-        coinTime(genshinData),
-        coinAlert(genshinData) ? alertColor : subTitleTextColor,
-        coinNumber(genshinData),
-        coinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    widget.addSpacer(4)
-
-    line = widget.addStack()
-    line.size = new Size(contentWidthWith("medium"), size.height)
-    line.layoutHorizontally()
-
-    await createPadKeyValueView(line, size,
-        `参量质变`,
-        titleTextColor,
-        transformerTime(genshinData),
-        transformerAlert(genshinData) ? alertColor : subTitleTextColor,
-        transformerStatus(genshinData),
-        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    line.addSpacer(4)
-
-    await createPadKeyValueView(line, size,
-        `周本减半`,
-        titleTextColor,
-        bossStatus(genshinData),
-        bossAlert(genshinData) ? alertColor : subTitleTextColor,
-        bossNumber(genshinData),
-        bossAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    widget.addSpacer(4)
-
-    line = widget.addStack()
-    line.size = new Size(contentWidthWith("medium"), size.height)
-    line.layoutHorizontally()
-
-    await createPadKeyValueView(line, size,
-        `探索派遣`,
-        titleTextColor,
-        expeditionTime(genshinData),
-        expeditionTimeAlert(genshinData) ? alertColor : subTitleTextColor,
-        expeditionStatus(genshinData),
-        expeditionStatusAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    line.addSpacer(4)
-
-    await createPadKeyValueView(line, size,
-        `每日委托`,
-        titleTextColor,
-        taskStatus(genshinData),
-        taskAlert(genshinData) ? alertColor : subTitleTextColor,
-        taskNumber(genshinData),
-        taskAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    return listWidget
-}
-async function createPadMediumWidget() {
-    let genshinData = await getGeshinData()
-
-    const listWidget = new ListWidget()
-    listWidget.backgroundColor = widgetBackgroundColor
-
-    let widget = listWidget.addStack()
-    widget.layoutVertically()
-    widget.size = new Size(contentWidthWith("medium"), contentHeightWith("medium"))
-
-    let headerSize = new Size(contentWidthWith("medium"), Math.min(24, widget.size.height / 6))
-    let header = await createHeader(widget, headerSize)
-    widget.addSpacer(2)
-
-    var content = widget.addStack()
-    content.layoutHorizontally()
-    content.size = new Size(widget.size.width, (widget.size.height - headerSize.height - 2))
-
-    var size = new Size(content.size.width / 2 - 2, content.size.height / 3)
-
-    var line = content.addStack()
-    line.size = new Size(size.width, size.height * 3)
-    line.layoutVertically()
-    line.borderColor = lineColor
-    line.cornerRadius = 8
-    line.borderWidth = 2
-
-    await createPhoneKeyValueView(line, size,
-        `原粹树脂`,
-        titleTextColor,
-        resinTime(genshinData),
-        resinAlert(genshinData) ? alertColor : subTitleTextColor,
-        resinNumber(genshinData),
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createPhoneKeyValueView(line, size,
-        `洞天宝钱`,
-        titleTextColor,
-        coinTime(genshinData),
-        coinAlert(genshinData) ? alertColor : subTitleTextColor,
-        coinNumber(genshinData),
-        coinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createPhoneKeyValueView(line, size,
-        `参量质变`,
-        titleTextColor,
-        transformerTime(genshinData),
-        transformerAlert(genshinData) ? alertColor : subTitleTextColor,
-        transformerStatus(genshinData),
-        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-
-    content.addSpacer(4)
-
-    line = content.addStack()
-    line.size = new Size(size.width, size.height * 3)
-    line.layoutVertically()
-    line.borderColor = lineColor
-    line.cornerRadius = 8
-    line.borderWidth = 2
-
-    await createPhoneKeyValueView(line, size,
-        `周本减半`,
-        titleTextColor,
-        bossStatus(genshinData),
-        bossAlert(genshinData) ? alertColor : subTitleTextColor,
-        bossNumber(genshinData),
-        bossAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createPhoneKeyValueView(line, size,
-        `探索派遣`,
-        titleTextColor,
-        expeditionTime(genshinData),
-        expeditionTimeAlert(genshinData) ? alertColor : subTitleTextColor,
-        expeditionStatus(genshinData),
-        expeditionStatusAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createPhoneKeyValueView(line, size,
-        `每日委托`,
-        titleTextColor,
-        taskStatus(genshinData),
-        taskAlert(genshinData) ? alertColor : subTitleTextColor,
-        taskNumber(genshinData),
-        taskAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
 
     return listWidget
 }
