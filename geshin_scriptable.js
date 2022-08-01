@@ -46,10 +46,10 @@ async function main() {
         if (!config.runsInWidget) { //测试时展示
             // let widget = await widgetWithFamily('small',true)
             // widget.presentSmall()
-            // let widget = await widgetWithFamily('medium',true)
-            // widget.presentMedium()
-            let widget = await widgetWithFamily('large',false)
-            widget.presentLarge()
+            let widget = await widgetWithFamily('medium',true)
+            widget.presentMedium()
+            // let widget = await widgetWithFamily('large',false)
+            // widget.presentLarge()
             // let widget = await widgetWithFamily('extraLarge',false)
             // widget.presentExtraLarge()
         }else{
@@ -193,40 +193,59 @@ async function createExpeditionView(widegt, size, expedition) {
 
     return view
 }
-async function createKeyValueMediumView(widget, size, title, titleColor, description, descriptionColor, value, valueColor) {
+async function createKeyValueMediumView(widget, size, title, titleColor, description, descriptionColor, value, valueColor, imageUrl) {
     var view = widget.addStack()
     view.layoutHorizontally()
+    view.centerAlignContent()
     view.size = size
-    view.backgroundColor = backgroundColor
+    view.borderColor = lineColor
+    view.borderWidth = 2
+    view.backgroundColor = subBackgroundColor
+    view.cornerRadius = size.height / 2
+
+    // var left = view.addStack()
+    // left.layoutHorizontally()
+    // left.centerAlignContent()
+    // left.backgroundColor = backgroundColor
+    // left.size = new Size(40, view.size.height)
+
+    // var titleText = left.addText(title)
+    // titleText.textColor = titleColor
+    // titleText.font = getFont("bold", 14)
+    // titleText.centerAlignText()
+    // titleText.minimumScaleFactor = 0.1
+    // titleText.lineLimit = 1
+
+    view.addSpacer(8)
 
     var left = view.addStack()
     left.layoutHorizontally()
     left.centerAlignContent()
-    left.size = new Size(40, view.size.height)
-
-    var titleText = left.addText(title)
-    titleText.textColor = titleColor
-    titleText.font = getFont("bold", 12)
-    titleText.centerAlignText()
-    titleText.minimumScaleFactor = 0.1
-    titleText.lineLimit = 1
+    left.size = new Size(24, 24)
+    left.backgroundColor = backgroundColor
+    left.cornerRadius = left.size.height / 2
+    
+    var req = new Request(imageUrl)
+    req.method = 'GET'
+    let image = left.addImage(await req.loadImage())
+    image.imageSize = new Size(24 - 4, 24 - 4)
 
     var right = view.addStack()
     right.centerAlignContent()
     right.backgroundColor = subBackgroundColor
     right.size = new Size(view.size.width - left.size.width, view.size.height)
-    right.setPadding(0, 4, 0, 8)
+    right.setPadding(0, 4, 0, 12)
 
     let descriptionText = right.addText(description)
     descriptionText.textColor = descriptionColor
-    descriptionText.font = getFont("light", 10)
+    descriptionText.font = getFont("light", 12)
     descriptionText.minimumScaleFactor = 0.1
     descriptionText.lineLimit = 1
 
     right.addSpacer()
 
     let valueText = right.addText(value)
-    valueText.font = getFont("bold", 12)
+    valueText.font = getFont("bold", 14)
     valueText.textColor = valueColor
     valueText.minimumScaleFactor = 0.1
     valueText.lineLimit = 1
@@ -247,7 +266,7 @@ async function createKeyValueLargeView(widget, size, title, titleColor, descript
     left.layoutHorizontally()
     left.centerAlignContent()
     left.size = new Size(70 + 24 + 4 + 8, view.size.height)
-    left.setPadding(0, 12, 0, 0)
+    left.setPadding(0, 8, 0, 0)
 
     var req = new Request(imageUrl)
     req.method = 'GET'
@@ -269,7 +288,7 @@ async function createKeyValueLargeView(widget, size, title, titleColor, descript
     right.centerAlignContent()
     right.layoutHorizontally()
     right.size = new Size(view.size.width - left.size.width, view.size.height)
-    right.setPadding(0, 12, 0, 12)
+    right.setPadding(0, 8, 0, 12)
 
     let descriptionText = right.addText(description)
     descriptionText.textColor = descriptionColor
@@ -353,110 +372,92 @@ async function createMediumWidget() {
     widget.addSpacer(10)
 
     var content = widget.addStack()
-    content.layoutHorizontally()
+    content.layoutVertically()
     content.size = new Size(widget.size.width, (widget.size.height - headerSize.height - 10))
 
-    var size = new Size(content.size.width / 2 - 2, content.size.height / 3)
-    size = new Size(size.width, Math.min(size.height, 30))
-    var margin = (content.size.height - size.height * 3) / 2
+    var margin = 4
+    var size = new Size(content.size.width / 2 - 2, content.size.height / 3 - margin)
 
-    var line = content.addStack()
-    line.size = new Size(size.width, content.size.height)
-    line.layoutVertically()
-    line.borderColor = lineColor
-    line.cornerRadius = 12
-    line.borderWidth = 2
+    var lineFirst = content.addStack()
+    lineFirst.size = new Size(content.size.width, size.height)
+    lineFirst.layoutHorizontally()
 
-
-    await createKeyValueMediumView(line, new Size(size.width , margin),
-        ``,
-        titleTextColor,
-        ``,
-        resinAlert(genshinData) ? alertColor : descriptionTextColor,
-        ``,
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createKeyValueMediumView(line, size,
+    await createKeyValueMediumView(lineFirst, size,
         `树脂`,
         titleTextColor,
         resinTime(genshinData),
         resinAlert(genshinData) ? alertColor : descriptionTextColor,
         resinNumber(genshinData),
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+        resinAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        resinImageUrl
     )
-    await createKeyValueMediumView(line, size,
+    
+    lineFirst.addSpacer(4)
+
+    await createKeyValueMediumView(lineFirst, size,
         `宝钱`,
         titleTextColor,
         coinTime(genshinData),
         coinAlert(genshinData) ? alertColor : descriptionTextColor,
         coinNumber(genshinData),
-        coinAlert(genshinData) ? subAlertColor : descriptionTextColor
+        coinAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        coinImageUrl
     )
-    await createKeyValueMediumView(line, size,
+    
+    content.addSpacer(4)
+
+    var lineSecond = content.addStack()
+    lineSecond.size = lineFirst.size
+    lineSecond.layoutHorizontally()
+
+    await createKeyValueMediumView(lineSecond, size,
         `质变`,
         titleTextColor,
         transformerTime(genshinData),
         transformerAlert(genshinData) ? alertColor : descriptionTextColor,
         transformerStatus(genshinData),
-        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createKeyValueMediumView(line, new Size(size.width , margin),
-        ``,
-        titleTextColor,
-        ``,
-        resinAlert(genshinData) ? alertColor : descriptionTextColor,
-        ``,
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        transformerImageUrl
     )
 
-    content.addSpacer(4)
+    lineSecond.addSpacer(4)
 
-    line = content.addStack()
-    line.size = new Size(size.width, content.size.height)
-    line.layoutVertically()
-    line.borderColor = lineColor
-    line.cornerRadius = 12
-    line.borderWidth = 2
-
-    await createKeyValueMediumView(line, new Size(size.width , margin),
-        ``,
-        titleTextColor,
-        ``,
-        resinAlert(genshinData) ? alertColor : descriptionTextColor,
-        ``,
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createKeyValueMediumView(line, size,
+    await createKeyValueMediumView(lineSecond, size,
         `周本`,
         titleTextColor,
         bossStatus(genshinData),
         bossAlert(genshinData) ? alertColor : descriptionTextColor,
         bossNumber(genshinData),
-        bossAlert(genshinData) ? subAlertColor : descriptionTextColor
+        bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        bossImageUrl
     )
-    await createKeyValueMediumView(line, size,
+
+    content.addSpacer(4)
+
+    var lineThird = content.addStack()
+    lineThird.size = lineFirst.size
+    lineThird.layoutHorizontally()
+
+    await createKeyValueMediumView(lineThird, size,
         `派遣`,
         titleTextColor,
         expeditionTime(genshinData),
         expeditionTimeAlert(genshinData) ? alertColor : descriptionTextColor,
         expeditionStatus(genshinData),
-        expeditionStatusAlert(genshinData) ? subAlertColor : descriptionTextColor
+        expeditionStatusAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        expenditionImageUrl
     )
-    await createKeyValueMediumView(line, size,
+
+    lineThird.addSpacer(4)
+
+    await createKeyValueMediumView(lineThird, size,
         `每日`,
         titleTextColor,
         taskStatus(genshinData),
         taskAlert(genshinData) ? alertColor : descriptionTextColor,
         taskNumber(genshinData),
-        taskAlert(genshinData) ? subAlertColor : descriptionTextColor
-    )
-    await createKeyValueMediumView(line, new Size(size.width , margin),
-        ``,
-        titleTextColor,
-        ``,
-        resinAlert(genshinData) ? alertColor : descriptionTextColor,
-        ``,
-        resinAlert(genshinData) ? subAlertColor : descriptionTextColor
+        taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        taskImageUrl
     )
 
     return listWidget
