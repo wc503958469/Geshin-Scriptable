@@ -39,16 +39,16 @@ const taskImageUrl          = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15
 const bossImageUrl          = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/c2b219874b51bd52aec7e793c9cfbd0e_6371863560482907257.png?x-oss-process=image/quality,q_75/resize,s_96"
 const expenditionImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/14ac5093fc9f48a54b0f6a362be8a61f_8273290538659802269.png?x-oss-process=image/quality,q_75/resize,s_96"
 const transformerImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
-const genshinLogoImageUrl   = "https://uploadstatic.mihoyo.com/ys-obc/2021/07/15/75276545/6ea098596332f6cec739632b1898f261_4937104021912138218.png?x-oss-process=image/quality,q_75/resize,s_96"
+const genshinLogoImageUrl   = "https://bbs.mihoyo.com/_nuxt/img/game-ys.dfc535b.jpg"
 
 async function main() {
     try { //添加运行错误提示
         if (!config.runsInWidget) { //测试时展示
-            // let widget = await widgetWithFamily('small',true)
-            // widget.presentSmall()
+//       let widget = await widgetWithFamily('small',true)
+//       widget.presentSmall()
             let widget = await widgetWithFamily('medium',true)
             widget.presentMedium()
-            // let widget = await widgetWithFamily('large',false)
+          // let widget = await widgetWithFamily('large',false)
             // widget.presentLarge()
             // let widget = await widgetWithFamily('extraLarge',false)
             // widget.presentExtraLarge()
@@ -215,20 +215,23 @@ async function createKeyValueMediumView(widget, size, title, titleColor, descrip
     // titleText.centerAlignText()
     // titleText.minimumScaleFactor = 0.1
     // titleText.lineLimit = 1
+    
+    var imageBackgroundSize = Math.min(24, size.height - 4)
+    var imageSize = imageBackgroundSize > 24 ? imageBackgroundSize - 4 : imageBackgroundSize
 
     view.addSpacer(8)
 
     var left = view.addStack()
     left.layoutHorizontally()
     left.centerAlignContent()
-    left.size = new Size(24, 24)
+    left.size = new Size(imageBackgroundSize, imageBackgroundSize)
     left.backgroundColor = backgroundColor
     left.cornerRadius = left.size.height / 2
     
     var req = new Request(imageUrl)
     req.method = 'GET'
     let image = left.addImage(await req.loadImage())
-    image.imageSize = new Size(24 - 4, 24 - 4)
+    image.imageSize = new Size(imageSize, imageSize)
 
     var right = view.addStack()
     right.centerAlignContent()
@@ -323,6 +326,8 @@ async function createSmallWidget() {
 
     let margin = 0
     let row = 3
+    var line = Math.ceil(genshinData["expeditions"].length / row)
+    line = Math.max(line, 2) 
     widget.addSpacer(margin)
 
     var expeditionsView = widget.addStack()
@@ -331,7 +336,7 @@ async function createSmallWidget() {
     let expeditionWidth = (widegtWidth + margin) / row - margin
     let expeditionHeight = (widget.size.height - headerSize.height) / 2 - margin
     var expeditionSize = new Size(expeditionWidth, expeditionHeight)
-    for (var i = 0; i < Math.ceil(genshinData["expeditions"].length / row); i++) {
+    for (var i = 0; i < line; i++) {
 
         var expeditionsSubView = widget.addStack()
         expeditionsSubView.size = new Size(widegtWidth, expeditionSize.height)
@@ -413,10 +418,10 @@ async function createMediumWidget() {
     await createKeyValueMediumView(lineSecond, size,
         `质变`,
         titleTextColor,
-        transformerTime(genshinData),
-        transformerAlert(genshinData) ? alertColor : descriptionTextColor,
         transformerStatus(genshinData),
         transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        transformerTime(genshinData),
+        transformerAlert(genshinData) ? alertColor : descriptionTextColor,
         transformerImageUrl
     )
 
@@ -506,9 +511,9 @@ async function createLargeWidget() {
     await createKeyValueLargeView(widget, size,
         `参量质变`,
         titleTextColor,
-        transformerTime(genshinData),
-        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
         transformerStatus(genshinData),
+        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        transformerTime(genshinData),
         transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
         transformerImageUrl
     )
@@ -518,9 +523,9 @@ async function createLargeWidget() {
     await createKeyValueLargeView(widget, size,
         `周本减半`,
         titleTextColor,
-        bossNumber(genshinData),
-        bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
         bossStatus(genshinData),
+        bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        bossNumber(genshinData),
         bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
         bossImageUrl
     )
@@ -530,9 +535,9 @@ async function createLargeWidget() {
     await createKeyValueLargeView(widget, size,
         `每日委托`,
         titleTextColor,
-        taskNumber(genshinData),
-        taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
         taskStatus(genshinData),
+        taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        taskNumber(genshinData),
         taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
         taskImageUrl
     )
@@ -614,9 +619,9 @@ async function createExtraLargeWidget() {
     await createKeyValueLargeView(line, size,
         `参量质变`,
         titleTextColor,
-        transformerTime(genshinData),
-        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
         transformerStatus(genshinData),
+        transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        transformerTime(genshinData),
         transformerAlert(genshinData) ? subAlertColor : descriptionTextColor,
         transformerImageUrl
     )
@@ -626,9 +631,9 @@ async function createExtraLargeWidget() {
     await createKeyValueLargeView(line, size,
         `周本减半`,
         titleTextColor,
-        bossNumber(genshinData),
-        bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
         bossStatus(genshinData),
+        bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        bossNumber(genshinData),
         bossAlert(genshinData) ? subAlertColor : descriptionTextColor,
         bossImageUrl
     )
@@ -641,9 +646,9 @@ async function createExtraLargeWidget() {
     await createKeyValueLargeView(line, size,
         `每日委托`,
         titleTextColor,
-        taskNumber(genshinData),
-        taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
         taskStatus(genshinData),
+        taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
+        taskNumber(genshinData),
         taskAlert(genshinData) ? subAlertColor : descriptionTextColor,
         taskImageUrl
     )
